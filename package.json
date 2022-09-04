@@ -1,0 +1,37 @@
+{
+	"name": "chat-app-simple-server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "nodemon --watch src --exec ts-node src/index.ts",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.27.2",
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.1",
+		"express": "^4.18.1",
+		"express-handlebars": "^6.0.6",
+		"handlebars": "^4.7.7",
+		"jsonschema": "^1.4.1",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^6.5.1",
+		"nodemon": "^2.0.19",
+		"passport": "^0.6.0",
+		"passport-google-oauth20": "^2.0.0",
+		"socket.io": "^4.5.1",
+		"ts-node": "^10.9.1"
+	},
+	"devDependencies": {
+		"@types/express": "^4.17.13",
+		"@types/express-session": "^1.17.5",
+		"@types/jsonwebtoken": "^8.5.8",
+		"@types/node": "^18.6.4",
+		"@types/passport": "^1.0.9",
+		"@types/passport-google-oauth20": "^2.0.11",
+		"typescript": "^4.7.4"
+	}
+}
