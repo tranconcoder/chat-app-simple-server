@@ -18,7 +18,8 @@ passport.use(
 		{
 			clientID: process.env.CLIENT_ID as string,
 			clientSecret: process.env.CLIENT_SECRET as string,
-			callbackURL: 'http://localhost:3000/auth/google/callback',
+			callbackURL:
+				'https://chat-app-simple-server.herokuapp.com/auth/google/callback',
 		},
 		async (accessToken, refreshToken, profile, cb) => {
 			const peopleApiResult = await axios.get(
