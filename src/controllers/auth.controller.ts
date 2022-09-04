@@ -15,7 +15,6 @@ import { generateToken } from '../utils/token.utils';
 class Auth {
 	public async getAuthInfo(req: Request, res: Response) {
 		try {
-			console.log('get auth info');
 			const validator = new Validator();
 			const validateResult = validator.validate(
 				googleLoginSchema,

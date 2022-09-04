@@ -21,7 +21,6 @@ class Auth {
     getAuthInfo(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                console.log('get auth info');
                 const validator = new jsonschema_1.Validator();
                 const validateResult = validator.validate(validateSchema_config_1.googleLoginSchema, req.user || {});
                 if (!validateResult.valid) {
