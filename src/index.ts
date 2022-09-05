@@ -14,7 +14,12 @@ const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 
 // Setup server
-app.options('*', cors());
+app.use(
+	cors({
+		origin: '*',
+		optionsSuccessStatus: 200,
+	})
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 setupMongoose();
