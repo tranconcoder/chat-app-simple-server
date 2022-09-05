@@ -18,6 +18,6 @@ export default function needAuth(
 
 		next();
 	} catch (err) {
-		res.status(500).send('Erro while verify account');
+		res.status(500).send('Error while verify account');
 	}
 }
