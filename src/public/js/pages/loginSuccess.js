@@ -1,7 +1,7 @@
-const profile = JSON.parse(document.getElementById('profile').dataset.profile);
-
-console.log(profile);
-console.log(postMessageUrlList);
+const profile = JSON.parse(document.getElementById('profile').dataset.data);
+const postMessageUrlList = JSON.parse(
+	JSON.parse(document.getElementById('post-message-url-list').dataset.data)
+);
 
 postMessageUrlList.forEach((url) => {
 	window.opener.postMessage(

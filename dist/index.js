@@ -11,6 +11,7 @@ const index_route_1 = __importDefault(require("./routes/index.route"));
 const setup_util_1 = require("./utils/setup.util");
 const setup_socket_1 = __importDefault(require("./services/socket/setup.socket"));
 const mongo_db_1 = __importDefault(require("./database/mongo.db"));
+const serverDomain_config_1 = __importDefault(require("./config/serverDomain.config"));
 dotenv_1.default.config();
 // Express server
 const app = (0, express_1.default)();
@@ -30,5 +31,5 @@ routeIndex.listenRoutes();
 const [httpServer, io] = (0, setup_socket_1.default)(app);
 exports.io = io;
 httpServer.listen(PORT, () => {
-    console.log(`Server is running: http://localhost:${PORT}`);
+    console.log(`Server is running: ${serverDomain_config_1.default}`);
 });

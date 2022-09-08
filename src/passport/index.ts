@@ -8,6 +8,7 @@ import {
 	ProfileTransformedGoogle,
 	ProfileTransformGoogleInput,
 } from '../types/transformers';
+import serverDomain from '../config/serverDomain.config';
 
 dotenv.config();
 
@@ -18,8 +19,7 @@ passport.use(
 		{
 			clientID: process.env.CLIENT_ID as string,
 			clientSecret: process.env.CLIENT_SECRET as string,
-			callbackURL:
-				'https://chat-app-simple-server.herokuapp.com/auth/google/callback',
+			callbackURL: `${serverDomain}/auth/google/callback`,
 		},
 		async (accessToken, refreshToken, profile, cb) => {
 			const peopleApiResult = await axios.get(

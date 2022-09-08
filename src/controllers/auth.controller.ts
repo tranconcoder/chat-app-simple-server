@@ -42,8 +42,7 @@ class Auth {
 				profile: {
 					...profile,
 				},
-				postMessageUrlList:
-					JSON.parse(process.env.CORS_LIST || '') || [],
+				postMessageUrlList: process.env.CORS_LIST,
 				accessToken,
 				refreshToken,
 			});

@@ -18,12 +18,13 @@ const passport_google_oauth20_1 = __importDefault(require("passport-google-oauth
 const dotenv_1 = __importDefault(require("dotenv"));
 const auth_schema_db_1 = __importDefault(require("../database/schema/auth.schema.db"));
 const auth_transformer_1 = require("../transformers/auth.transformer");
+const serverDomain_config_1 = __importDefault(require("../config/serverDomain.config"));
 dotenv_1.default.config();
 const GoogleStrategy = passport_google_oauth20_1.default.Strategy;
 passport_1.default.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: 'https://chat-app-simple-server.herokuapp.com/auth/google/callback',
+    callbackURL: `${serverDomain_config_1.default}/auth/google/callback`,
 }, (accessToken, refreshToken, profile, cb) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b;
     const peopleApiResult = yield axios_1.default.get(`https://people.googleapis.com/v1/people/${profile.id}`, {
