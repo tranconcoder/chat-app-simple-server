@@ -12,15 +12,21 @@ import {
 import { messageSendedSchema } from '../../config/validateSchema.config';
 import { Validator } from 'jsonschema';
 import { SendMessagePayload, SendMessageResponse } from '../../types/socket';
+import dotenv from 'dotenv';
+
+dotenv.config({
+	path: '../../../.env',
+});
 
 export default function setupSocket(app: Application): [HttpServer, Server] {
 	const httpServer = createServer(app);
+	const corsUrlList: string[] = JSON.parse(process.env.CORS_LIST || '') || [];
 
 	const io = new Server(httpServer, {
 		path: '/socket',
 		upgradeTimeout: 3000,
 		cors: {
-			origin: '*',
+			origin: corsUrlList,
 		},
 	});
 

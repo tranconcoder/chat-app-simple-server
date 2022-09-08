@@ -11,6 +11,11 @@ import authSchemaDb from '../database/schema/auth.schema.db';
 import Account from '../types/account';
 import { ProfileTransformedGoogle } from '../types/transformers';
 import { generateToken } from '../utils/token.utils';
+import dotenv from 'dotenv';
+
+dotenv.config({
+	path: '../../.env',
+});
 
 class Auth {
 	public async getAuthInfo(req: Request, res: Response) {
@@ -34,7 +39,11 @@ class Auth {
 			const refreshToken = generateToken(profile, 'refresh');
 
 			res.render('loginSuccess', {
-				profile,
+				profile: {
+					...profile,
+				},
+				postMessageUrlList:
+					JSON.parse(process.env.CORS_LIST || '') || [],
 				accessToken,
 				refreshToken,
 			});
