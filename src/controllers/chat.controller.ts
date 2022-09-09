@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import chatSchemaDb from '../database/schema/chat.schema.db';
-import { MongooseChatSchema } from '../types/mongoose';
 
 class Chat {
 	public async getChatsWithPeople(req: Request, res: Response) {

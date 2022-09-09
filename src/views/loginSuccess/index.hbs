@@ -1,8 +1,9 @@
-<div id='profile' data-data='{{toJson profile}}'></div>
-<div id='post-message-url-list' data-data='{{toJson postMessageUrlList}}'></div>
-
-<script>
-	const accessToken ="{{accessToken}}"; const refreshToken ="{{refreshToken}}";
-</script>
+<div
+	id='data'
+	data-profile='{{toJson profile}}'
+	data-post-message-url-list='{{toJson postMessageUrlList}}'
+	data-access-token='{{accessToken}}'
+	data-refresh-token='{{refreshToken}}'
+></div>
 
 <script src='/js/pages/loginSuccess.js'></script>

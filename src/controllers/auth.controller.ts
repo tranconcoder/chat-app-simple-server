@@ -39,10 +39,8 @@ class Auth {
 			const refreshToken = generateToken(profile, 'refresh');
 
 			res.render('loginSuccess', {
-				profile: {
-					...profile,
-				},
-				postMessageUrlList: process.env.CORS_LIST,
+				profile,
+				postMessageUrlList: JSON.parse(process.env.CORS_LIST as string),
 				accessToken,
 				refreshToken,
 			});
